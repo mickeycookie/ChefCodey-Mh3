@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //public Trans
     private Animator anim;
     private Rigidbody rb;
     private Quaternion lastLook;
@@ -19,18 +20,20 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = -Input.GetAxis("Horizontal");
+        float vertical = -Input.GetAxis("Vertical");
 
         Vector3 movementVector = new Vector3(horizontal, 0, vertical).normalized;
+        //Vector3 movementVector = (transform.right * horizontal + transform.forward * vertical).normalized;
         
         if (movementVector.magnitude != 0)
         {
-            lastLook = Quaternion.LookRotation(movementVector);
+            lastLook = Quaternion.LookRotation(movementVector);// * transform.rotation;
         }
         transform.rotation = lastLook;
 
         Vector3 movement = new Vector3(horizontal, 0, vertical) * speed / 100;
+        //Vector3 movement = movementVector * speed / 100;
         rb.MovePosition(transform.position + movement);
 
         anim.SetFloat("horizontalVector", movementVector.magnitude);
