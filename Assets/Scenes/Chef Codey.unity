@@ -4860,6 +4860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toast: {fileID: 2068901009}
+  cookedFood: 
 --- !u!1 &797876268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1696349189593892, guid: a880b7f20a3694308be2bff57c22dd9b, type: 3}
@@ -13090,6 +13091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ff21ab1a3468641b57c4c8ca5b8f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stove: {fileID: 788138583}
   triggerName: Bread
   breadPrefab: {fileID: 390866237143858364}
   heldItem: {fileID: 0}
