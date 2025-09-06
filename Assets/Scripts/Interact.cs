@@ -3,12 +3,36 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     public string triggerName = "";
+
+    public GameObject breadPrefab;
+
+    public GameObject heldItem;
+    public string heldItemName;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("space"))
         {
-            print("Space!");
+            if (triggerName == "Bread")
+            {
+                heldItem = Instantiate(breadPrefab, transform, false);
+                heldItem.transform.localPosition = new Vector3(0, 2, 2);
+                heldItemName = "breadSlice";
+                //print("Codey wants to pick up the bread!");
+            }
+
+            if (triggerName == "Stove")
+            {
+                print("Codey is at the stove!");
+                if (heldItemName == "breadSlice")
+                {
+                    print("Ready to toast!");
+                }
+                else
+                {
+                    print("Codey is empty handed!");
+                }
+            }
         }
     }
 
@@ -20,6 +44,6 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
+        triggerName = "";
     }
 }
