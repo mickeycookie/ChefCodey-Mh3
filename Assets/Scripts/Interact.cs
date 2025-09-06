@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    public Stove stove;
+
     public string triggerName = "";
 
     public GameObject breadPrefab;
 
     public GameObject heldItem;
     public string heldItemName;
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -23,14 +27,21 @@ public class Interact : MonoBehaviour
 
             if (triggerName == "Stove")
             {
-                print("Codey is at the stove!");
-                if (heldItemName == "breadSlice")
+                if(heldItemName == "breadSlice")
                 {
-                    print("Ready to toast!");
+                    stove.ToastBread();
+                    Destroy(heldItem);
+                    heldItemName = "";
                 }
                 else
                 {
-                    print("Codey is empty handed!");
+                    if (stove.cookedFood == "toast")
+                    {
+                        heldItem = Instantiate(breadPrefab, transform, false);
+                        heldItem.transform.localPosition = new Vector3(0, 2, 2);
+                        heldItemName = "toastSlice";
+                        stove.CleanStove();
+                    }
                 }
             }
         }
