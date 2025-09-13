@@ -45,6 +45,24 @@ public class Interact : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown("space"))
+        {
+            if (triggerName == "Bread")
+            {
+
+            }
+
+            if (triggerName == "Stove")
+            {
+
+            }
+
+            if (triggerName == "Recievers")
+            {
+                print("I'm ready to make a dish!");
+            }
+        }
     }
 
 
