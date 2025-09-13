@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
@@ -10,6 +12,7 @@ public class Interact : MonoBehaviour
 
     public GameObject heldItem;
     public string heldItemName;
+
 
     
     // Update is called once per frame
@@ -30,8 +33,7 @@ public class Interact : MonoBehaviour
                 if(heldItemName == "breadSlice")
                 {
                     stove.ToastBread();
-                    Destroy(heldItem);
-                    heldItemName = "";
+                    PlaceHeldItem();
                 }
                 else
                 {
@@ -44,27 +46,25 @@ public class Interact : MonoBehaviour
                     }
                 }
             }
-        }
 
-        if (Input.GetKeyDown("space"))
-        {
-            if (triggerName == "Bread")
+            if (triggerName == "Receivers")
             {
-
-            }
-
-            if (triggerName == "Stove")
-            {
-
-            }
-
-            if (triggerName == "Recievers")
-            {
-                print("I'm ready to make a dish!");
+                //print("I'm ready to make a dish!");
+                if (heldItemName == "toastSlice")
+                {
+                    PlaceHeldItem();
+                    GameObject.Find("Receivers/French Toast/toastSlice").SetActive(true);
+                }
             }
         }
+
     }
 
+    private void PlaceHeldItem()
+    {
+        Destroy(heldItem);
+        heldItemName = "";
+    }
 
     private void OnTriggerEnter(Collider other)
     {
