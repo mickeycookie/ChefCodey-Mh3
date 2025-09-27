@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 801669913}
   - component: {fileID: 801669912}
   m_Layer: 0
-  m_Name: Receivers
+  m_Name: Recievers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
