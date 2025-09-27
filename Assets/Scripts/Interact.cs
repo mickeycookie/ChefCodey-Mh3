@@ -14,7 +14,8 @@ public class Interact : MonoBehaviour
     public string heldItemName;
 
 
-    
+
+
     // Update is called once per frame
     void Update()
     {
@@ -47,13 +48,13 @@ public class Interact : MonoBehaviour
                 }
             }
 
-            if (triggerName == "Receivers")
+            if (triggerName == "Recievers")
             {
                 //print("I'm ready to make a dish!");
                 if (heldItemName == "toastSlice")
                 {
                     PlaceHeldItem();
-                    GameObject.Find("Receivers/French Toast/toastSlice").SetActive(true);
+                    GameObject.Find("Recievers/egg toast/toastSlice").SetActive(true);
                 }
             }
         }
