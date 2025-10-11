@@ -3,6 +3,7 @@ using UnityEngine;
 public class Stove : MonoBehaviour
 {
     public GameObject toast;
+    public GameObject friedEgg;
 
     public string cookedFood = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,6 +16,11 @@ public class Stove : MonoBehaviour
     {
         toast.SetActive(true);
         cookedFood = "toast";
+    }
+
+    public void FryEgg()
+    {
+       
     }
 
     public void CleanStove()
