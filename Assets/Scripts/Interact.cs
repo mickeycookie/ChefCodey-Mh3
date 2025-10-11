@@ -9,6 +9,7 @@ public class Interact : MonoBehaviour
     public string triggerName = "";
 
     public GameObject breadPrefab;
+    public GameObject eggPrefab;
 
     public GameObject heldItem;
     public string heldItemName;
@@ -48,13 +49,13 @@ public class Interact : MonoBehaviour
                 }
             }
 
-            if (triggerName == "Recievers")
+            if (triggerName == "Receivers")
             {
                 //print("I'm ready to make a dish!");
                 if (heldItemName == "toastSlice")
                 {
                     PlaceHeldItem();
-                    GameObject.Find("Recievers/egg toast/toastSlice").SetActive(true);
+                    GameObject.Find("Receivers/French Toast/toastSlice").SetActive(true);
                 }
             }
         }
