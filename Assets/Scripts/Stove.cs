@@ -10,6 +10,7 @@ public class Stove : MonoBehaviour
     void Start()
     {
         toast.SetActive(false);
+        friedEgg.SetActive(false);
     }
 
     public void ToastBread()
@@ -20,12 +21,14 @@ public class Stove : MonoBehaviour
 
     public void FryEgg()
     {
-       
+        friedEgg.SetActive(true);
+        cookedFood = "friedEgg";
     }
 
     public void CleanStove()
     {
         toast.SetActive(false);
+        friedEgg.SetActive(false);
         cookedFood = "";
     }
     // Update is called once per frame

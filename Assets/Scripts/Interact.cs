@@ -29,7 +29,7 @@ public class Interact : MonoBehaviour
                 //heldItem = Instantiate(breadPrefab, transform, false);
                 //heldItem.transform.localPosition = new Vector3(0, 2, 2);
                 //heldItemName = "breadSlice";
-                //print("Codey wants to pick up the bread!");
+                print("Codey wants to pick up the bread!");
             }
 
             if (triggerName == "Egg")
@@ -74,6 +74,11 @@ public class Interact : MonoBehaviour
                 {
                     PlaceHeldItem();
                     GameObject.Find("Receivers/French Toast/toastSlice").SetActive(true);
+                }
+                if(heldItemName == "friedEgg")
+                {
+                    PlaceHeldItem();
+                    GameObject.Find("Receivers/French Toast/friedEgg").SetActive(true);
                 }
             }
         }
